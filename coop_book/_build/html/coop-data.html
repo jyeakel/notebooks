@@ -1,0 +1,646 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Co-op Data &#8212; Coop Data Notebook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'coop-data';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Coop Data Notebook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Co-op Data</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jyeakel/notebooks" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jyeakel/notebooks/issues/new?title=Issue%20on%20page%20%2Fcoop-data.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/coop-data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Co-op Data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="co-op-data">
+<h1>Co-op Data<a class="headerlink" href="#co-op-data" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">sales</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Downloads/seward_sales_since_2020.csv&quot;</span><span class="p">,</span><span class="n">thousands</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">sales</span><span class="o">.</span><span class="n">sale_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">sales</span><span class="o">.</span><span class="n">sale_date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sales</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Downloads/seward_sales_since_2020.csv&quot;</span><span class="p">,</span><span class="n">thousands</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">sales</span><span class="o">.</span><span class="n">sale_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">sales</span><span class="o">.</span><span class="n">sale_date</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniforge/base/envs/coop-data/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniforge/base/envs/coop-data/lib/python3.12/site-packages/pandas/io/parsers/readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniforge/base/envs/coop-data/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniforge/base/envs/coop-data/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniforge/base/envs/coop-data/lib/python3.12/site-packages/pandas/io/common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;Downloads/seward_sales_since_2020.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+
+<span class="c1">#source = sales.loc[sales[&#39;br&#39;]==2]</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">sales</span>
+<span class="n">selection</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_point</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;floor&#39;</span><span class="p">],</span> <span class="n">bind</span><span class="o">=</span><span class="s1">&#39;legend&#39;</span><span class="p">)</span>
+<span class="n">x_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;studio&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">]</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">source</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
+        <span class="s1">&#39;br:N&#39;</span><span class="p">,</span>
+        <span class="n">sort</span><span class="o">=</span><span class="n">x_order</span>
+    <span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;median(sale_price):Q&#39;</span><span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;floor:N&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(),</span>
+    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)),</span>
+    <span class="n">size</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">30</span><span class="p">)),</span>
+    <span class="n">tooltip</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;floor:N&#39;</span><span class="p">,</span><span class="s1">&#39;br:N&#39;</span><span class="p">,</span><span class="s1">&#39;median(sale_price):Q&#39;</span><span class="p">,</span> <span class="s1">&#39;count(sale_price):Q&#39;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_params</span><span class="p">(</span>
+    <span class="n">selection</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
+<span class="p">)</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+  #altair-viz-e91b206e322b46328561e19a9ec457aa.vega-embed {
+    width: 100%;
+    display: flex;
+  }
+
+  #altair-viz-e91b206e322b46328561e19a9ec457aa.vega-embed details,
+  #altair-viz-e91b206e322b46328561e19a9ec457aa.vega-embed details summary {
+    position: relative;
+  }
+</style>
+<div id="altair-viz-e91b206e322b46328561e19a9ec457aa"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-e91b206e322b46328561e19a9ec457aa") {
+      outputDiv = document.getElementById("altair-viz-e91b206e322b46328561e19a9ec457aa");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "5.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-6bfbd6628583af83251a39c1a3d6e0fe"}, "mark": {"type": "circle", "point": true}, "encoding": {"color": {"field": "floor", "scale": {}, "type": "nominal"}, "opacity": {"condition": {"param": "param_85", "value": 1}, "value": 0.1}, "size": {"condition": {"param": "param_85", "value": 100}, "value": 30}, "tooltip": [{"field": "floor", "type": "nominal"}, {"field": "br", "type": "nominal"}, {"aggregate": "median", "field": "sale_price", "type": "quantitative"}, {"aggregate": "count", "field": "sale_price", "type": "quantitative"}], "x": {"field": "br", "sort": ["studio", "1", "2", "3", "4"], "type": "nominal"}, "y": {"aggregate": "median", "field": "sale_price", "type": "quantitative"}}, "height": 500, "params": [{"name": "param_85", "select": {"type": "point", "fields": ["floor"]}, "bind": "legend"}, {"name": "param_86", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "width": 800, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-6bfbd6628583af83251a39c1a3d6e0fe": [{"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "212 EAST BROADWAY", "unit": "G1802", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"212+EAST+BROADWAY\"+\"G1802\"", "floor": 18, "tower": "LEFT", "br": "2", "ba": 2.0, "year_built": 1960, "sale_price": 2500000.0, "sale_date": "2022-05-16T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H1607", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H1607\"", "floor": 16, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 799000.0, "sale_date": "2020-01-21T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E306", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E306\"", "floor": 3, "tower": "MIDDLE", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1325000.0, "sale_date": "2020-01-28T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L1801", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L1801\"", "floor": 18, "tower": "MIDDLE", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1860000.0, "sale_date": "2022-04-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B1908", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B1908\"", "floor": 19, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 775000.0, "sale_date": "2020-02-12T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "208 EAST BROADWAY", "unit": "J902", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"208+EAST+BROADWAY\"+\"J902\"", "floor": 9, "tower": "RIGHT", "br": "2", "ba": 2.0, "year_built": 1960, "sale_price": 1850000.0, "sale_date": "2022-01-21T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "208 EAST BROADWAY", "unit": "J1801", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"208+EAST+BROADWAY\"+\"J1801\"", "floor": 18, "tower": "RIGHT", "br": "2", "ba": 2.0, "year_built": 1960, "sale_price": 1616000.0, "sale_date": "2020-12-15T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H1803", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H1803\"", "floor": 18, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 687500.0, "sale_date": "2020-03-17T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F1101", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F1101\"", "floor": 11, "tower": "LEFT", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1285000.0, "sale_date": "2020-04-28T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H102", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H102\"", "floor": 1, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 459000.0, "sale_date": "2020-04-30T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "387 GRAND ST", "unit": "K401", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"387+GRAND+ST\"+\"K401\"", "floor": 4, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 645000.0, "sale_date": "2020-05-18T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E1603", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E1603\"", "floor": 16, "tower": "MIDDLE", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1770000.0, "sale_date": "2020-05-26T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND ST", "unit": "E104", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+ST\"+\"E104\"", "floor": 1, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 685000.0, "sale_date": "2020-05-29T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B1004", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B1004\"", "floor": 10, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 765000.0, "sale_date": "2020-06-23T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B1005", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B1005\"", "floor": 10, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 665000.0, "sale_date": "2020-06-23T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "212 EAST BROADWAY", "unit": "G1704", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"212+EAST+BROADWAY\"+\"G1704\"", "floor": 17, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1475000.0, "sale_date": "2022-03-10T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L205", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L205\"", "floor": 2, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 695000.0, "sale_date": "2020-07-09T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L602", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L602\"", "floor": 6, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 520000.0, "sale_date": "2020-07-13T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L304", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L304\"", "floor": 3, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 715000.0, "sale_date": "2020-08-06T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B1902", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B1902\"", "floor": 19, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 475000.0, "sale_date": "2020-08-13T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L1402", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L1402\"", "floor": 14, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 245000.0, "sale_date": "2020-08-21T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "387 GRAND STREET", "unit": "K806", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"387+GRAND+STREET\"+\"K806\"", "floor": 8, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1425000.0, "sale_date": "2024-05-06T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "383 GRAND STREET", "unit": "M601", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"383+GRAND+STREET\"+\"M601\"", "floor": 6, "tower": "LEFT", "br": "3", "ba": 4.0, "year_built": 1960, "sale_price": 1387000.0, "sale_date": "2020-09-10T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "387 GRAND STREET", "unit": "K104", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"387+GRAND+STREET\"+\"K104\"", "floor": 1, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 975000.0, "sale_date": "2024-04-19T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L1204", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L1204\"", "floor": 12, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 700000.0, "sale_date": "2020-10-01T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C1403", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C1403\"", "floor": 14, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 775000.0, "sale_date": "2020-10-13T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H1403", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H1403\"", "floor": 14, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 700000.0, "sale_date": "2020-10-22T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L1103", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L1103\"", "floor": 11, "tower": "MIDDLE", "br": "3", "ba": 2.0, "year_built": 1960, "sale_price": 1700000.0, "sale_date": "2020-10-29T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "383 GRAND ST", "unit": "M1207", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"383+GRAND+ST\"+\"M1207\"", "floor": 12, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1295000.0, "sale_date": "2022-07-28T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "387 GRAND STREET", "unit": "K1106", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"387+GRAND+STREET\"+\"K1106\"", "floor": 11, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1250000.0, "sale_date": "2023-10-13T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A1901", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A1901\"", "floor": 19, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1210000.0, "sale_date": "2020-09-29T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E602", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E602\"", "floor": 6, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 450000.0, "sale_date": "2020-11-22T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "387 GRAND STREET", "unit": "K807", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"387+GRAND+STREET\"+\"K807\"", "floor": 8, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1200000.0, "sale_date": "2024-02-09T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B1604", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B1604\"", "floor": 16, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 750000.0, "sale_date": "2020-12-11T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B1402", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B1402\"", "floor": 14, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 455000.0, "sale_date": "2020-12-15T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "212 EAST BROADWAY", "unit": "G1706", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"212+EAST+BROADWAY\"+\"G1706\"", "floor": 17, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1195000.0, "sale_date": "2021-09-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L1304", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L1304\"", "floor": 13, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 740000.0, "sale_date": "2020-12-18T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L105", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L105\"", "floor": 1, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 669000.0, "sale_date": "2021-01-11T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H208", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H208\"", "floor": 2, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 728000.0, "sale_date": "2021-01-15T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D1202", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D1202\"", "floor": 12, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 720000.0, "sale_date": "2021-01-19T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C1007", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C1007\"", "floor": 10, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1175000.0, "sale_date": "2021-11-12T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C506", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C506\"", "floor": 5, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1100000.0, "sale_date": "2023-12-15T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B902", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B902\"", "floor": 9, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 449000.0, "sale_date": "2021-02-01T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F901", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F901\"", "floor": 9, "tower": "LEFT", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1285000.0, "sale_date": "2021-02-01T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L2004", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L2004\"", "floor": 20, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 660000.0, "sale_date": "2021-02-01T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E1505", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E1505\"", "floor": 15, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 660000.0, "sale_date": "2021-02-08T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "208 EAST BROADWAY", "unit": "J1802", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"208+EAST+BROADWAY\"+\"J1802\"", "floor": 18, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 810000.0, "sale_date": "2021-02-23T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F1702", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F1702\"", "floor": 17, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 459000.0, "sale_date": "2021-02-25T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L106", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L106\"", "floor": 1, "tower": "MIDDLE", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1277500.0, "sale_date": "2021-03-10T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "212 EAST BROADWAY", "unit": "G1406", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"212+EAST+BROADWAY\"+\"G1406\"", "floor": 14, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1156000.0, "sale_date": "2023-11-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L1602", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L1602\"", "floor": 16, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 459000.0, "sale_date": "2021-03-12T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F1204", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F1204\"", "floor": 12, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1155000.0, "sale_date": "2021-09-22T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B1502", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B1502\"", "floor": 15, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 463000.0, "sale_date": "2021-03-25T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C1206", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C1206\"", "floor": 12, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1150000.0, "sale_date": "2021-05-25T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "208 EAST BROADWAY", "unit": "J1404", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"208+EAST+BROADWAY\"+\"J1404\"", "floor": 14, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1125000.0, "sale_date": "2020-06-24T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L1403", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L1403\"", "floor": 14, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 685000.0, "sale_date": "2021-04-22T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C1707", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C1707\"", "floor": 17, "tower": "RIGHT", "br": "3", "ba": 2.5, "year_built": 1960, "sale_price": 2480000.0, "sale_date": "2021-05-03T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A2002", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A2002\"", "floor": 20, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 850000.0, "sale_date": "2021-05-06T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F806", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F806\"", "floor": 8, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1125000.0, "sale_date": "2022-08-01T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E302", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E302\"", "floor": 3, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 440000.0, "sale_date": "2021-05-24T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "383 GRAND STREET", "unit": "M1205", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"383+GRAND+STREET\"+\"M1205\"", "floor": 12, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1125000.0, "sale_date": "2023-03-10T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "383 GRAND STREET", "unit": "M1002", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"383+GRAND+STREET\"+\"M1002\"", "floor": 10, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 450000.0, "sale_date": "2021-06-03T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "383 GRAND STREET", "unit": "M603", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"383+GRAND+STREET\"+\"M603\"", "floor": 6, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 857000.0, "sale_date": "2021-06-04T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "383 GRAND STREET", "unit": "M602", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"383+GRAND+STREET\"+\"M602\"", "floor": 6, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 442000.0, "sale_date": "2021-06-09T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C302", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C302\"", "floor": 3, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 640000.0, "sale_date": "2021-06-16T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H1605", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H1605\"", "floor": 16, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 765000.0, "sale_date": "2021-06-17T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L507", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L507\"", "floor": 5, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 735000.0, "sale_date": "2021-06-22T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C401", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C401\"", "floor": 4, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 739000.0, "sale_date": "2021-06-23T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C101", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C101\"", "floor": 1, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 640000.0, "sale_date": "2021-06-23T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "D1902", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"D1902\"", "floor": 19, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 950000.0, "sale_date": "2021-07-08T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "208 EAST BROADWAY", "unit": "J702", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"208+EAST+BROADWAY\"+\"J702\"", "floor": 7, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 650000.0, "sale_date": "2021-07-12T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "387 GRAND STREET", "unit": "K602", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"387+GRAND+STREET\"+\"K602\"", "floor": 6, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 716000.0, "sale_date": "2021-07-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "387 GRAND STREET", "unit": "K1707", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"387+GRAND+STREET\"+\"K1707\"", "floor": 17, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1112500.0, "sale_date": "2022-03-22T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "208 EAST BROADWAY", "unit": "J1504", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"208+EAST+BROADWAY\"+\"J1504\"", "floor": 15, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1100000.0, "sale_date": "2022-05-06T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C1902", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C1902\"", "floor": 19, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 780000.0, "sale_date": "2021-07-22T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C1607", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C1607\"", "floor": 16, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1100000.0, "sale_date": "2023-08-02T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E703", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E703\"", "floor": 7, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 675000.0, "sale_date": "2021-08-23T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "208 EAST BROADWAY", "unit": "J603", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"208+EAST+BROADWAY\"+\"J603\"", "floor": 6, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 830000.0, "sale_date": "2021-08-25T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A1006", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A1006\"", "floor": 10, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1100000.0, "sale_date": "2023-10-10T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D204", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D204\"", "floor": 2, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 999999.0, "sale_date": "2023-12-05T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A201", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A201\"", "floor": 2, "tower": "LEFT", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1275000.0, "sale_date": "2021-08-31T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E708", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E708\"", "floor": 7, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 740000.0, "sale_date": "2021-09-01T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C1306", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C1306\"", "floor": 13, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1075000.0, "sale_date": "2022-01-20T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "383 GRAND STREET", "unit": "M101", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"383+GRAND+STREET\"+\"M101\"", "floor": 1, "tower": "LEFT", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1262500.0, "sale_date": "2021-09-10T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "212 EAST BROADWAY", "unit": "G304", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"212+EAST+BROADWAY\"+\"G304\"", "floor": 3, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1075000.0, "sale_date": "2023-11-02T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "383 GRAND STREET", "unit": "M2002", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"383+GRAND+STREET\"+\"M2002\"", "floor": 20, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 875000.0, "sale_date": "2021-09-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F1704", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F1704\"", "floor": 17, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1065000.0, "sale_date": "2020-11-12T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D601", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D601\"", "floor": 6, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 659000.0, "sale_date": "2021-09-20T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "212 EAST BROADWAY", "unit": "G105", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"212+EAST+BROADWAY\"+\"G105\"", "floor": 1, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1055000.0, "sale_date": "2023-01-17T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D501", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D501\"", "floor": 5, "tower": "RIGHT", "br": "4", "ba": 2.0, "year_built": 1960, "sale_price": 1775000.0, "sale_date": "2021-09-24T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F207", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F207\"", "floor": 2, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1050000.0, "sale_date": "2023-01-09T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F1206", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F1206\"", "floor": 12, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1050000.0, "sale_date": "2020-11-02T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L1506", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L1506\"", "floor": 15, "tower": "MIDDLE", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1395000.0, "sale_date": "2021-10-12T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H1603", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H1603\"", "floor": 16, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 738000.0, "sale_date": "2021-10-20T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E702", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E702\"", "floor": 7, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 435000.0, "sale_date": "2021-10-27T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E103", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E103\"", "floor": 1, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 645000.0, "sale_date": "2021-10-28T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E1104", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E1104\"", "floor": 11, "tower": "MIDDLE", "br": "4", "ba": 3.0, "year_built": 1960, "sale_price": 2400000.0, "sale_date": "2021-10-29T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "387 GRAND STREET", "unit": "K1802", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"387+GRAND+STREET\"+\"K1802\"", "floor": 18, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 850000.0, "sale_date": "2021-11-01T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B708", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B708\"", "floor": 7, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 815000.0, "sale_date": "2021-11-02T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A1007", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A1007\"", "floor": 10, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1050000.0, "sale_date": "2021-05-11T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L404", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L404\"", "floor": 4, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 675000.0, "sale_date": "2021-11-18T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L1106", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L1106\"", "floor": 11, "tower": "MIDDLE", "br": "3", "ba": 2.0, "year_built": 1960, "sale_price": 1630000.0, "sale_date": "2021-11-19T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B1507", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B1507\"", "floor": 15, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 805000.0, "sale_date": "2021-12-08T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D1402", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D1402\"", "floor": 14, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 749000.0, "sale_date": "2021-12-13T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A104", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A104\"", "floor": 1, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 950000.0, "sale_date": "2022-04-19T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E1302", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E1302\"", "floor": 13, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 495000.0, "sale_date": "2021-12-29T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F307", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F307\"", "floor": 3, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 975000.0, "sale_date": "2022-04-07T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C807", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C807\"", "floor": 8, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1050000.0, "sale_date": "2023-04-12T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "387 GRAND STREET", "unit": "K903", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"387+GRAND+STREET\"+\"K903\"", "floor": 9, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 750000.0, "sale_date": "2022-01-21T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E505", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E505\"", "floor": 5, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 575000.0, "sale_date": "2022-01-27T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "208 EAST BROADWAY", "unit": "J706", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"208+EAST+BROADWAY\"+\"J706\"", "floor": 7, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1050000.0, "sale_date": "2024-03-26T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 E. BROADWAY", "unit": "H1803", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+E.+BROADWAY\"+\"H1803\"", "floor": 18, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 830000.0, "sale_date": "2022-02-08T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D1302", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D1302\"", "floor": 13, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 685000.0, "sale_date": "2022-02-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D903", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D903\"", "floor": 9, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 769000.0, "sale_date": "2022-02-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D1104", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D1104\"", "floor": 11, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1040000.0, "sale_date": "2020-11-10T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E2004", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E2004\"", "floor": 20, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 700000.0, "sale_date": "2022-03-09T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F1307", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F1307\"", "floor": 13, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1040000.0, "sale_date": "2024-02-13T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A1903", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A1903\"", "floor": 19, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 835000.0, "sale_date": "2022-03-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H1203", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H1203\"", "floor": 12, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 738000.0, "sale_date": "2022-03-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A405", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A405\"", "floor": 4, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1050000.0, "sale_date": "2022-04-04T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C904", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C904\"", "floor": 9, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1010000.0, "sale_date": "2021-08-25T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A1904", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A1904\"", "floor": 19, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 999999.0, "sale_date": "2021-01-28T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "387 GRAND STREET", "unit": "K203", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"387+GRAND+STREET\"+\"K203\"", "floor": 2, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 797500.0, "sale_date": "2022-03-22T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "212 EAST BROADWAY", "unit": "G1307", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"212+EAST+BROADWAY\"+\"G1307\"", "floor": 13, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 999999.0, "sale_date": "2021-09-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A105", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A105\"", "floor": 1, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 930000.0, "sale_date": "2022-03-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C2001", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C2001\"", "floor": 20, "tower": "RIGHT", "br": "3", "ba": 2.0, "year_built": 1960, "sale_price": 1350000.0, "sale_date": "2022-04-08T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A107", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A107\"", "floor": 1, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1170000.0, "sale_date": "2021-12-22T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H1004", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H1004\"", "floor": 10, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 700000.0, "sale_date": "2022-04-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L1802", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L1802\"", "floor": 18, "tower": "MIDDLE", "br": "3", "ba": 2.0, "year_built": 1960, "sale_price": 1860000.0, "sale_date": "2022-04-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F606", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F606\"", "floor": 6, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 999000.0, "sale_date": "2020-03-06T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D1002", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D1002\"", "floor": 10, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 645000.0, "sale_date": "2022-04-29T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B405", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B405\"", "floor": 4, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 625000.0, "sale_date": "2022-05-02T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E1007", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E1007\"", "floor": 10, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 810000.0, "sale_date": "2022-05-04T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C202", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C202\"", "floor": 2, "tower": "RIGHT", "br": "2", "ba": 2.0, "year_built": 1960, "sale_price": 975000.0, "sale_date": "2021-10-05T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A606", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A606\"", "floor": 6, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 999000.0, "sale_date": "2021-10-12T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E502", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E502\"", "floor": 5, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 420000.0, "sale_date": "2022-05-20T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "387 GRAND STREET", "unit": "K301", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"387+GRAND+STREET\"+\"K301\"", "floor": 3, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 677000.0, "sale_date": "2022-05-23T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D807", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D807\"", "floor": 8, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 990000.0, "sale_date": "2021-09-08T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D102", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D102\"", "floor": 1, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 640000.0, "sale_date": "2022-05-25T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D101", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D101\"", "floor": 1, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 640000.0, "sale_date": "2022-05-27T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "383 GRAND STREET", "unit": "M1603", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"383+GRAND+STREET\"+\"M1603\"", "floor": 16, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 895000.0, "sale_date": "2022-05-31T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B705", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B705\"", "floor": 7, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 827000.0, "sale_date": "2022-06-15T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "1501", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"1501\"", "floor": 15, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 695000.0, "sale_date": "2022-07-08T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "387 GRAND STREET", "unit": "K1302", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"387+GRAND+STREET\"+\"K1302\"", "floor": 13, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 830000.0, "sale_date": "2022-07-27T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A2006", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A2006\"", "floor": 20, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 990000.0, "sale_date": "2024-02-28T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "208 EAST BROADWAY", "unit": "J1804", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"208+EAST+BROADWAY\"+\"J1804\"", "floor": 18, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 985000.0, "sale_date": "2022-05-23T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E1602", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E1602\"", "floor": 16, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 498000.0, "sale_date": "2022-08-03T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B1404", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B1404\"", "floor": 14, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 750000.0, "sale_date": "2022-08-04T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B906", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B906\"", "floor": 9, "tower": "MIDDLE", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 711500.0, "sale_date": "2022-09-21T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND ST", "unit": "E204", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+ST\"+\"E204\"", "floor": 2, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 610000.0, "sale_date": "2022-11-03T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H1702", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H1702\"", "floor": 17, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 480000.0, "sale_date": "2022-11-04T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C1101", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C1101\"", "floor": 11, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 710000.0, "sale_date": "2022-11-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E1707", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E1707\"", "floor": 17, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 787000.0, "sale_date": "2022-11-17T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L1603", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L1603\"", "floor": 16, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 803000.0, "sale_date": "2022-12-14T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A2004", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A2004\"", "floor": 20, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 985000.0, "sale_date": "2024-01-12T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "387 GRAND STREET", "unit": "K905", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"387+GRAND+STREET\"+\"K905\"", "floor": 9, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 975000.0, "sale_date": "2020-01-03T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H1505", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H1505\"", "floor": 15, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 600000.0, "sale_date": "2023-01-30T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "208 EAST BROADWAY", "unit": "J906", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"208+EAST+BROADWAY\"+\"J906\"", "floor": 9, "tower": "RIGHT", "br": "4", "ba": 2.0, "year_built": 1960, "sale_price": 2175000.0, "sale_date": "2023-01-31T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F101", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F101\"", "floor": 1, "tower": "LEFT", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1085000.0, "sale_date": "2023-02-01T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F103", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F103\"", "floor": 1, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 735000.0, "sale_date": "2023-02-10T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E608", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E608\"", "floor": 6, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 730000.0, "sale_date": "2023-02-28T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C407", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C407\"", "floor": 4, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 999900.0, "sale_date": "2021-08-23T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "212 EAST BROADWAY", "unit": "G401", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"212+EAST+BROADWAY\"+\"G401\"", "floor": 4, "tower": "LEFT", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1250000.0, "sale_date": "2023-03-21T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H1405", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H1405\"", "floor": 14, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 585000.0, "sale_date": "2023-04-04T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "383 GRAND STREET", "unit": "M304", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"383+GRAND+STREET\"+\"M304\"", "floor": 3, "tower": "LEFT", "br": "2", "ba": 2.0, "year_built": 1960, "sale_price": 1300000.0, "sale_date": "2021-07-21T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "208 EAST BROADWAY", "unit": "J107", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"208+EAST+BROADWAY\"+\"J107\"", "floor": 1, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1019500.0, "sale_date": "2021-04-07T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H1907", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H1907\"", "floor": 19, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 750000.0, "sale_date": "2023-05-03T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A203", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A203\"", "floor": 2, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 855000.0, "sale_date": "2023-05-16T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F1201", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F1201\"", "floor": 12, "tower": "LEFT", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1290000.0, "sale_date": "2023-06-22T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B1806", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B1806\"", "floor": 18, "tower": "MIDDLE", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1575007.0, "sale_date": "2023-06-23T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H707", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H707\"", "floor": 7, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 730000.0, "sale_date": "2023-07-18T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H1008", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H1008\"", "floor": 10, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 775000.0, "sale_date": "2023-07-19T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "208 EAST BROADWAY", "unit": "J1601", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"208+EAST+BROADWAY\"+\"J1601\"", "floor": 16, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 675000.0, "sale_date": "2023-07-19T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A1305", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A1305\"", "floor": 13, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 970000.0, "sale_date": "2023-04-10T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E707", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E707\"", "floor": 7, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 715000.0, "sale_date": "2023-08-02T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C1303", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C1303\"", "floor": 13, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 880000.0, "sale_date": "2023-08-03T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND ST", "unit": "L1507", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+ST\"+\"L1507\"", "floor": 15, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 800000.0, "sale_date": "2023-08-17T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B706", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B706\"", "floor": 7, "tower": "MIDDLE", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1285000.0, "sale_date": "2023-09-13T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B502", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B502\"", "floor": 5, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 455000.0, "sale_date": "2023-09-18T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E1801", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E1801\"", "floor": 18, "tower": "MIDDLE", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 950000.0, "sale_date": "2020-03-02T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "212 E. BROADWAY", "unit": "G1005", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"212+E.+BROADWAY\"+\"G1005\"", "floor": 10, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 950000.0, "sale_date": "2021-08-30T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H1908", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H1908\"", "floor": 19, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 790000.0, "sale_date": "2023-10-27T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E1407", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E1407\"", "floor": 14, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 735688.0, "sale_date": "2023-11-01T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "212 EAST BROADWAY", "unit": "G605", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"212+EAST+BROADWAY\"+\"G605\"", "floor": 6, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 950000.0, "sale_date": "2022-03-08T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F1102", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F1102\"", "floor": 11, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 440000.0, "sale_date": "2023-11-03T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "212 EAST BROADWAY", "unit": "G1402", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"212+EAST+BROADWAY\"+\"G1402\"", "floor": 14, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 450000.0, "sale_date": "2023-11-07T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H306", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H306\"", "floor": 3, "tower": "MIDDLE", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1300000.0, "sale_date": "2023-11-08T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D105", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D105\"", "floor": 1, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 999000.0, "sale_date": "2021-04-05T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C1301", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C1301\"", "floor": 13, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 670000.0, "sale_date": "2023-11-20T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H605", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H605\"", "floor": 6, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 630000.0, "sale_date": "2023-11-29T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "413 GRAND STREET", "unit": "F1905", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"413+GRAND+STREET\"+\"F1905\"", "floor": 19, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 949000.0, "sale_date": "2022-02-03T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E1601", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E1601\"", "floor": 16, "tower": "MIDDLE", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 935000.0, "sale_date": "2022-03-15T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L302", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L302\"", "floor": 3, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 515000.0, "sale_date": "2023-12-19T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L902", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L902\"", "floor": 9, "tower": "MIDDLE", "br": "studio", "ba": 1.0, "year_built": 1960, "sale_price": 460000.0, "sale_date": "2024-01-04T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H101", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H101\"", "floor": 1, "tower": "MIDDLE", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 860000.0, "sale_date": "2021-03-24T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H1308", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H1308\"", "floor": 13, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 765000.0, "sale_date": "2024-01-16T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B1406", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B1406\"", "floor": 14, "tower": "MIDDLE", "br": "3", "ba": 1.5, "year_built": 1960, "sale_price": 1300000.0, "sale_date": "2024-01-31T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "383 GRAND STREET", "unit": "M902", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"383+GRAND+STREET\"+\"M902\"", "floor": 9, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 450000.0, "sale_date": "2024-02-02T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C1906", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C1906\"", "floor": 19, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 900000.0, "sale_date": "2021-07-16T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "385 GRAND STREET", "unit": "L307", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"385+GRAND+STREET\"+\"L307\"", "floor": 3, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 780000.0, "sale_date": "2024-02-09T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A306", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A306\"", "floor": 3, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 890000.0, "sale_date": "2021-03-11T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D1305", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D1305\"", "floor": 13, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 860000.0, "sale_date": "2021-01-28T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D401", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D401\"", "floor": 4, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 650000.0, "sale_date": "2024-03-13T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "417 GRAND STREET", "unit": "D207", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"417+GRAND+STREET\"+\"D207\"", "floor": 2, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 1050000.0, "sale_date": "2020-09-04T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "266 EAST BROADWAY", "unit": "B1504", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"266+EAST+BROADWAY\"+\"B1504\"", "floor": 15, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 650000.0, "sale_date": "2024-04-02T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "208 EAST BROADWAY", "unit": "J1605", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"208+EAST+BROADWAY\"+\"J1605\"", "floor": 16, "tower": "RIGHT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 488800.0, "sale_date": "2020-02-11T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "383 GRAND STREET", "unit": "M1602", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"383+GRAND+STREET\"+\"M1602\"", "floor": 16, "tower": "LEFT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 433000.0, "sale_date": "2024-04-19T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "208 EAST BROADWAY", "unit": "J1803", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"208+EAST+BROADWAY\"+\"J1803\"", "floor": 18, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 999000.0, "sale_date": "2024-04-26T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "268 EAST BROADWAY", "unit": "A705", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"268+EAST+BROADWAY\"+\"A705\"", "floor": 7, "tower": "LEFT", "br": "2", "ba": 1.0, "year_built": 1960, "sale_price": 467225.0, "sale_date": "2020-12-09T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "415 GRAND STREET", "unit": "E1704", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"415+GRAND+STREET\"+\"E1704\"", "floor": 17, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 650000.0, "sale_date": "2024-05-08T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "264 EAST BROADWAY", "unit": "C2003", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"264+EAST+BROADWAY\"+\"C2003\"", "floor": 20, "tower": "RIGHT", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 910000.0, "sale_date": "2024-06-17T00:00:00"}, {"neighborhood": "LOWER EAST SIDE", "zip": 10002, "building_class": "10 COOPS - ELEVATOR APARTMENTS", "address": "210 EAST BROADWAY", "unit": "H907", "url": "https://www.google.com/search?q=site%3Astreeteasy.com+\"210+EAST+BROADWAY\"+\"H907\"", "floor": 9, "tower": "MIDDLE", "br": "1", "ba": 1.0, "year_built": 1960, "sale_price": 740000.0, "sale_date": "2024-06-25T00:00:00"}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
