@@ -18,63 +18,17 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-selection = alt.selection_point(fields=['br'], bind='legend')
-color_order = ["studio", "1", "2", "3", "4"]
-unit_number = [None, 1,2,3,4,5,6,7,8]
-addresses = [None,
-             "208 EAST BROADWAY",
-             "210 EAST BROADWAY", 
-             "212 EAST BROADWAY",
-             "264 EAST BROADWAY", 
-             "266 EAST BROADWAY", 
-             "268 EAST BROADWAY",
-             "383 GRAND STREET",
-             "385 GRAND STREET",
-             "387 GRAND STREET",
-             "413 GRAND STREET",
-             "415 GRAND STREET",
-             "417 GRAND STREET"
-             ]
+## Median Sale Price by # Bedrooms and Floor (2020-2024)
+The charts below show median sale price by number of bedrooms and floor in two views.
 
-base = alt.Chart(source).mark_line(point=alt.OverlayMarkDef(filled=False, fill="white", size=50.0)).encode(
-    alt.X('sale_date:T', axis=alt.Axis(format="%Y %B")),
-    alt.Y('sale_price:Q'),
-    alt.Color(
-        'br:N',
-        sort=color_order
-    ).scale(),
-    href='url:N'
-    opacity=alt.condition(selection, alt.value(1), alt.value(0.1)),
-    tooltip = ['address:N','unit:N','floor:N','br:N','ba:N','median(sale_price):Q', 'sale_date:T']
-).add_params(
-    selection
-).properties(
-    width=600,
-    height=350,
-    title="Sale Prices by # Bedrooms (2020-2024)"
-).interactive()
-
-address_dropdown = alt.binding_select(options=addresses, name="Address")
-address_select = alt.selection_point(fields=['address'], bind=address_dropdown)
-unit_dropdown = alt.binding_select(options=unit_number, name="Unit Number")
-unit_select = alt.selection_point(fields=['number'], bind=unit_dropdown)
-
-filters = base.add_params(
-    unit_select
-).transform_filter(
-    unit_select
-).add_params(
-    address_select
-).transform_filter(
-    address_select
-)
-filters
+* Click the legend to filter by floor in the first chart and bedroom count in the second.
+* Hover on points to see median sale price and number of sales included in the aggregate.
 ------------------
 
 
-[0;36m  Cell [0;32mIn[4], line 26[0;36m[0m
-[0;31m    href='url:N'[0m
-[0m         ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax. Perhaps you forgot a comma?
+[0;36m  Cell [0;32mIn[3], line 2[0;36m[0m
+[0;31m    The charts below show median sale price by number of bedrooms and floor in two views.[0m
+[0m        ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
 
