@@ -28,3 +28,5 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  analytics:
+    google_analytics_id: 'G-3DH19N7DXP'
