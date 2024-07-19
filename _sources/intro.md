@@ -1,6 +1,6 @@
-# Co-op Sales in Seward Park
+# Notebooks
 
-This notebook contains historical price data from purchases from Seward Park Co-Op.
+Miscellaneous notebooks and other digital marginalia
 
 ```{tableofcontents}
 ```
